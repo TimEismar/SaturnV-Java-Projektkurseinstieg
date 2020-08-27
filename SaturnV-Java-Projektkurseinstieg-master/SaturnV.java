@@ -9,8 +9,6 @@ public class SaturnV
 {
     // Instanzvariablen - ersetzen Sie das folgende Beispiel mit Ihren Variablen
     private int x;
-    private int t;
-    private int z;
 
     /**
      * Konstruktor für Objekte der Klasse SaturnV
@@ -52,33 +50,20 @@ public class SaturnV
         double speed = 0;
         
         
-     
+       /* for (int i = 0; i < 3; i++){
+            double trPerSec = treibstoffgewicht[i] / brenndauer[i];
+            System.out.println(i);
+        }*/
         System.out.println("Zeit, Geschwindigkeit, DeltaV, Gewicht");
-        for(int n = 0; n < 3; n++){
-            for(int i = 0; i < brenndauer[n]; i = i + intervall ){
-                double trPerSec = treibstoffgewicht[n] / brenndauer[n];
-                deltaV = trPerSec / gewicht * speedTr;
-                speed = speed + deltaV;
-                gewicht = gewicht - trPerSec;
+        for(int i = 0; i < brenndauer[0]; i = i + intervall ){
+        double trPerSec = treibstoffgewicht[0] / brenndauer[0];
+        deltaV = trPerSec / gewicht * speedTr;
+        speed = speed + deltaV;
+        gewicht = gewicht - trPerSec;
         
-                if(n == 0){
-                    System.out.println(i + "                      " + speed + "                        " + deltaV + "                            " + gewicht);
-                    t = i;
-                }
-                else{
-                    if(n==1){
-            int r = i + t;
-            System.out.println(r + "                      " + speed + "                        " + deltaV + "                            " + gewicht);
-            z = r;
-        }
-        else{
-        int g = i + z;
-        System.out.println(g + "                      " + speed + "                        " + deltaV + "                            " + gewicht);
+        
+        System.out.println(i + "                      " + speed + "                        " + deltaV + "                            " + gewicht);
     }
-        }
-    }
-    
-}
             
         
         
